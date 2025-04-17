@@ -1,11 +1,22 @@
-<!-- todos.component.html -->
+<p>todo component</p>
+<!--
+todos.component.html 
 <main>
     <h1>My todos</h1>
     <button (click)="createTodo()">+ new</button>
     <ul>
         <li 
             *ngFor="let todo of todos;">
-            {{ todo.content }}
+            {{ todo.firstname }}
+            {{ todo.lastname }}
+            {{ todo.age }}
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let todo of todos;" (click)="deleteTodo(todo.id)">
+            {{ todo.firstname }}
+            {{ todo.lastname }}
+            {{ todo.age }}
         </li>
     </ul>
     <div>
@@ -16,3 +27,4 @@
         </a>
     </div>
 </main>
+-->
