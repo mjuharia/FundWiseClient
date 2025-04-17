@@ -1,5 +1,5 @@
 
-<amplify-authenticator>
+<amplify-authenticator [hideSignUp]="true">
   <p>in App component</p>
     <ng-template
       amplifySlot="authenticated"
@@ -9,8 +9,9 @@
     <h1>Hello {{user?.signInDetails?.loginId}}'s todos</h1>
      <!-- <app-customers></app-customers> -->
      <!-- <app-todos></app-todos> -->
-      <app-loan-application></app-loan-application>
-      
+      <!--<app-loan-application></app-loan-application> -->
+      <router-outlet></router-outlet>
+
       <button (click)="signOut()">Sign Out</button>
     </ng-template>
   </amplify-authenticator>

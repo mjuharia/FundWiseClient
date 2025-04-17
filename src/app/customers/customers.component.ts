@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Customer } from '../common/customer';
 import { CustomerService } from '../services/customer-service.service';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { take } from 'rxjs';
 
@@ -11,7 +11,7 @@ import { take } from 'rxjs';
 @Component({
   selector: 'app-customers',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterLink],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.css'
 })

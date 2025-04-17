@@ -1,35 +1,50 @@
 
-<table class="table table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th></th>
-        <th>Customer Name</th>
-        <th>Tax ID</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>Country ID</th>
-        <th>Postal Code</th>
-        <th>Create By</th>
-        <th>Created On</th>
-        <th>Modified By</th>
-        <th>Modified On</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cust of customers">
-        
-        <td class="align-middle">{{ cust.name }}</td>
-        <td class="align-middle">{{ cust.taxID }}</td>
-        <td class="align-middle">{{ cust.address }}</td>
-        <td class="align-middle">{{ cust.city }}</td>
-        <td class="align-middle">{{ cust.state }}</td>
-        <td class="align-middle">{{ cust.postalCcode }}</td>
-        <td class="align-middle">{{ cust.createdBy }}</td>
-        <td class="align-middle">{{ cust.createdOn }}</td>
-        <td class="align-middle">{{ cust.modifiedBy }}</td>
-        <td class="align-middle">{{ cust.modifiedOn }}</td>
-      </tr>
-    </tbody>
-  </table>
+
+<div class="container">
+  <aside class="sidebar">
+    <h2>Fund Wise</h2>
+    <nav>
+      <a routerLink="/loan-application"><button>Loan Application</button></a>
+      <a routerLink="/customers"><button class="active">Customers</button></a>
+    </nav>
+  </aside>
+
+  <main class="form-container">
+    <h1>Customer Management</h1>
+    <p>List of customers who have applied for loans will appear here.</p>
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th></th>
+          <th>Customer Name</th>
+          <th>Tax ID</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Country ID</th>
+          <th>Postal Code</th>
+          <th>Create By</th>
+          <th>Created On</th>
+          <th>Modified By</th>
+          <th>Modified On</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cust of customers">
+          
+          <td class="align-middle">{{ cust.name }}</td>
+          <td class="align-middle">{{ cust.taxID }}</td>
+          <td class="align-middle">{{ cust.address }}</td>
+          <td class="align-middle">{{ cust.city }}</td>
+          <td class="align-middle">{{ cust.state }}</td>
+          <td class="align-middle">{{ cust.postalCcode }}</td>
+          <td class="align-middle">{{ cust.createdBy }}</td>
+          <td class="align-middle">{{ cust.createdOn }}</td>
+          <td class="align-middle">{{ cust.modifiedBy }}</td>
+          <td class="align-middle">{{ cust.modifiedOn }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>
 
   

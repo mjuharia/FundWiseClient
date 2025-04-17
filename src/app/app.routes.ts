@@ -1,7 +1,9 @@
 
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-//import { CustomersComponent } from './components/customers/customers.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
+//import { CognitoService } from './services/cognito.service';
 
 
 export const routes: Routes = [
@@ -10,5 +12,11 @@ export const routes: Routes = [
         component: CustomersComponent,
       },
       */
+     
+
 ];
+
+
+
+
 
