@@ -1,0 +1,51 @@
+<div class="container">
+    <aside class="sidebar">
+      <h2>FundWise</h2>
+      <nav>
+        <button>Dashboard</button>
+        <button class="active">Loan Application</button>
+      </nav>
+    </aside>
+  
+    <main class="form-container">
+      <div class="header">
+        <h1>Construction Loan Application</h1>
+        <a href="#">Save and finish later</a>
+      </div>
+  
+      <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+        <div class="form-section">
+          <label>Loan Amount</label>
+          <input formControlName="loanAmount" placeholder="$260,000" />
+  
+          <label>Term</label>
+          <select formControlName="loanTerm">
+            <option value="12 months">12 months</option>
+            <option value="24 months">24 months</option>
+          </select>
+        </div>
+  
+        <div class="form-section">
+          <label>First Name</label>
+          <input formControlName="firstName" />
+  
+          <label>Last Name</label>
+          <input formControlName="lastName" />
+  
+          <label>Date of Birth</label>
+          <input type="date" formControlName="dob" />
+  
+          <label>Phone</label>
+          <input formControlName="phone" placeholder="(123) 456-7890" />
+        </div>
+  
+        <div class="form-section">
+          <label>Annual Income</label>
+          <input formControlName="income" />
+        </div>
+  
+        <button type="submit" [disabled]="!loanForm.valid">Continue</button>
+      </form>
+    </main>
+  </div>
+  
