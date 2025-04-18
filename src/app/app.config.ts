@@ -6,6 +6,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
 import { CustomersComponent } from './customers/customers.component';
 
+
 const routes: Routes = [
   {
     path: 'customers',

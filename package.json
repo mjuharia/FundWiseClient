@@ -20,8 +20,11 @@
     "@angular/router": "^17.3.0",
     "@aws-amplify/ui-angular": "^5.0.34",
     "@aws-amplify/ui-react": "^6.11.0",
+    "ag-grid-angular": "^33.2.4",
+    "ag-grid-community": "^33.2.4",
     "ag-grid-react": "^33.0.2",
     "aws-amplify": "^6.10.3",
+    "aws-sdk": "^2.1692.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

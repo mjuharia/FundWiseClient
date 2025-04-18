@@ -30,8 +30,22 @@
   background-color: #1c3b5f;
   border-radius: 4px;
 }
+
 .form-container {
   flex: 1;
-  padding: 40px;
+  padding: 40px 60px;
   background-color: #f9fafb;
+  max-width: 100%;
+  text-align: left; /* ensures all text is aligned left */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* aligns child elements to the left */
+}
+
+
+.grid-wrapper {
+  width: 100%;
+  max-width: 1400px; /* increase from typical 900–1200px */
+  margin: 0 auto;
+  padding: 0px;
 }
