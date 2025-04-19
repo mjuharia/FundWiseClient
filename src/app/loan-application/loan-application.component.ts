@@ -31,6 +31,6 @@ export class LoanApplicationComponent {
       console.log(this.loanForm.value);
     }
       //console.log(this.loanForm.value);
-    this.router.navigateByUrl('/customers');
+    this.router.navigateByUrl('/file-uploader');
   }
 }
