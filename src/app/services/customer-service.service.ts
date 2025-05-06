@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Customer } from '../common/customer';
@@ -11,11 +11,16 @@ import { environment } from '../../environments/environment';
 export class CustomerService {
   
   private baseUrl = environment.serviceURL.baseURL + 'customers';
-
+  private rawHttp: HttpClient;
   customers: Customer[] = [];
 
   // inject httpClient to read restful methods
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private httpBackend: HttpBackend) {
+    // Create a new HttpClient instance using the HttpBackend
+    this.rawHttp = new HttpClient(httpBackend);
+    console.log('Customer Service constructor called...');
+    console.log(`Customer Service URL = ${this.baseUrl} `);
+  }
 
   // getCustomerList(
   //   thePageSize: number,
@@ -33,8 +38,23 @@ export class CustomerService {
       `Customer Service URL = ${this.baseUrl} `
     );
     
-    return this.httpClient.get<Customer[]>(`${this.baseUrl}`);
-   
+    return this.rawHttp.get<Customer[]>(`${this.baseUrl}`,{withCredentials: true});
+
+    /*
+    return this.rawHttp.get<Customer[]>(`${this.baseUrl}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers':
+          'Content-Type, Authorization, X-Requested-With',
+      },
+      reportProgress: true,
+      responseType: 'text' as 'json',
+      observe: 'response',
+      // 👇 Tells Angular not to include credentials, cookies, or XSRF tokens
+      withCredentials: false});
+   */
   }
 
   getCustomerListByProfId(custProfileId: number): Observable<Customer[]> {

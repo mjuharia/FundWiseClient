@@ -55,7 +55,7 @@ export class CustomersComponent implements OnInit {
     );
     this.customerService.getCustomerList()
     .pipe(take(1)) // notice take(1) to unsubscribe observable  
-    .subscribe((res) => this.customers = res)
+    .subscribe((res) => this.customers = res);
      
   }
 
